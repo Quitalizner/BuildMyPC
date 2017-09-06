@@ -1,0 +1,21 @@
+<h1>Add Product of any type</h1>
+
+<%= form_for(@product, url: products_path) do |f|%>
+	<%= f.label :name %>
+	<%= f.text_field :name, class: 'form-control' %>
+
+	<%= f.label :value %>
+	<%= f.number_field :value, class: 'form-control' %>
+
+	<%= f.label :description %>
+	<%= f.text_field :description, class: 'form-control' %>
+
+	<%= f.label :specification %>
+	<%= f.text_field :specification, class: 'form-control' %>
+
+	<%= f.label :price %>
+	<%= f.number_field :price, class: 'form-control' %>
+
+
+	<%= f.submit "Create", class: 'btn btn-primary' %>
+<% end %>

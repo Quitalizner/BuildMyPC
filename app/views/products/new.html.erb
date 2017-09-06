@@ -1,0 +1,19 @@
+<h1>Add the New Product Attribute</h1>
+
+<%= form_for(@product, url: products_path(@product, val: "true"), html: { multipart: true }) do |f|%>		<!-- #multipart is used when there is file upload in the form.-->
+	<%= f.label :name %>
+	<%= f.text_field :name, class: 'form-control' %>
+
+	<%= f.hidden_field :value, :value => params[:value] %>							<!-- # Used to hide the value attribute and specifying the value to the form( so that the type of product cannot be changed or added while submitting )-->
+
+	<%= f.label :description %>
+	<%= f.text_field :description, class: 'form-control' %>
+
+	<%= f.label :specification %>
+	<%= f.text_field :specification, class: 'form-control' %>
+
+	<%= f.label :price %>
+	<%= f.number_field :price, class: 'form-control' %>
+
+	<%= f.submit "Create", class: 'btn btn-primary' %>
+<% end %>

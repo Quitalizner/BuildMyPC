@@ -1,0 +1,11 @@
+<h1> New Type of Product Creation</h1>
+
+<%= form_for(@type, url: product_types_path) do |f| %>	<!-- since the path is product_types (with types instead of type in the url) it call the create action hence no need to provide method -->
+	<%= f.label :name %>
+	<%= f.text_field :name, class: 'form-control' %>
+
+	<%= f.label :value %>
+	<%= f.number_field :value, class: 'form-control' %>
+
+	<%= f.submit "Create", class: "btn btn-primary" %>
+<% end %>
