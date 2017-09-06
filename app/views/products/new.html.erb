@@ -15,5 +15,8 @@
 	<%= f.label :price %>
 	<%= f.number_field :price, class: 'form-control' %>
 
+	<%= f.hidden_field(:image_cache) %>
+	<%= f.file_field(:image) %>
+
 	<%= f.submit "Create", class: 'btn btn-primary' %>
 <% end %>

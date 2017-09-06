@@ -1,9 +1,10 @@
 <h1>Product lisiting of a single type</h1>
 
 <% @products.each do |product| %>
-	<li><%= link_to product.name, product_path(product) %>
-		<%= link_to 'Edit', edit_product_path(product, val: "true" ) %>
-		<%= link_to 'Delete', product_path(product, val: "true" ) , method: :delete, data: {confirm: "Are u sure?"} %>
+	<li><%= link_to product.name, product_path(product) %></li>
+	<li> <%= image_tag(product.image.url(:standard)) %> </li>
+	<li><%= link_to 'Edit', edit_product_path(product, val: "true" ) %></li>
+	<li><%= link_to 'Delete', product_path(product, val: "true" ) , method: :delete, data: {confirm: "Are u sure?"} %>
 	</li>
 <%end%>
 

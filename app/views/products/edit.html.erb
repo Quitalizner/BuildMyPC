@@ -1,6 +1,6 @@
 <h1>Edit Product Items</h1>
 
-<%= form_for(@product, url: product_path(@product,val: params[:val]), method: :patch) do |f|%>
+<%= form_for(@product, url: product_path(@product,val: params[:val]), method: :patch, html: { multipart: true }) do |f|%>	<!-- Cloudinary specified to implement image -->
 	<%= f.label :name %>
 	<%= f.text_field :name, class: 'form-control' %>
 
@@ -15,7 +15,9 @@
 
 	<%= f.label :price %>
 	<%= f.number_field :price, class: 'form-control' %>
-
+	
+	<%= f.hidden_field(:image_cache) %>			<!-- Cloudinary way of adding images -->
+	<%= f.file_field(:image) %>
 
 	<%= f.submit "Update", class: 'btn btn-primary' %>
 <% end %>
