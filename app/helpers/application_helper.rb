@@ -8,4 +8,9 @@ module ApplicationHelper
 			page_title + " | " + base_title
 		end
 	end
+
+	def products_sidebar
+	    products = ProductType.all # Or whatever you like
+	    render partial: "shared/products_sidebar", locals: {products: products}
+  	end
 end

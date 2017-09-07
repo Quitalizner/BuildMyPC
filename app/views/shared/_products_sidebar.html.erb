@@ -1,0 +1,11 @@
+<div id="products_sidebar">
+	<% products.each do |type| %>				
+		<li><%= link_to type.name, product_type_path(type)%>	<!-- go to product_type controller show action-->
+		<%= link_to "Edit", edit_product_type_path(type) %>	<!-- go to product_type controller edit action -->
+		<%= link_to "Delete", product_type_path(type) , method: :delete, data: { confirm: "Are U Sure?" }%>		<!-- go to product_type controller delete action and a pop to confirm the action -->
+		</li>
+	<% end %>
+
+	<h3><%= link_to "New Type Of Product", new_product_type_path %></h3>
+	<h3><%= link_to "All Types of Products", products_path %></h3> <!-- All types of products listed for admin's ease -->
+</div>

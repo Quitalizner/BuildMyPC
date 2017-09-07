@@ -1,2 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo{
+	color: white;
+	font-size: 40px;
+	letter-spacing: 2px;
+	text-shadow: 3px 2px cyan;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-variant: small-caps;
+	margin: 50px;
+	padding: 10px;
+}
+
+aside{
+	margin-top: 150px;
+}
