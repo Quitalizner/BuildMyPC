@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
 			if params[:val] == "true"
 				redirect_to product_path 		#Show action view
 			else
-				redirect_to products_path		#Index action view
+				redirect_to products_url		#Index action view
 			end
 		else
 			render 'edit'
@@ -42,8 +42,10 @@ class ProductsController < ApplicationController
 			else
 				redirect_to products_path
 			end
+		elsif params[:val] == "true"
+			redirect_to new_product_url
 		else
-			redirect_to new_product_path
+			redirect_to products_allitems_url
 		end
 	end
 
