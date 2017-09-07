@@ -5,7 +5,7 @@
 	<%= f.text_field :name, class: 'form-control' %>
 
 	<%= f.label :type %>
-	<%= f.collection_select :value, ProductType.all, :value, :name, prompt: true, selected: @product.value %>
+	<%= f.collection_select :value, ProductType.all, :value, :name, prompt: true, selected: @product.value %>	<!-- syntax for collection_select :foreign_key, Model(having the name).all, :primary_key, :field to show in the selector, propmt: select any, options (here using selected will show the category selected each time edit is called) -->
 
 
 	<%= f.label :description %>
