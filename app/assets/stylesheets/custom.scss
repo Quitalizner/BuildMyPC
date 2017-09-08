@@ -1,8 +1,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
+$light-gray: #777;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+
+/* header*/
+
 #logo{
-	color: white;
+	color: #ccc;
 	font-size: 40px;
 	letter-spacing: 2px;
 	text-shadow: 3px 2px cyan;
@@ -11,8 +24,152 @@
 	font-variant: small-caps;
 	margin: 50px;
 	padding: 10px;
+	&:hover{
+		color: white;
+		text-decoration: none;
+	}
 }
 
-aside{
-	margin-top: 150px;
+
+
+
+/*Error on forms and actions*/
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin-top: 30px;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.flash {
+	margin-top: 105px;
+}
+
+/*Universal*/
+
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+  margin-bottom: 10px;
+  }
+}
+
+
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $light-gray;
+  a {
+  	color: #555;
+	&:hover {
+ 		color: #222;
+ 	}
+  }
+  small {
+  	float: left;
+  }
+  ul {
+  	float: right;
+  	list-style: none;
+	li {
+  		float: left;
+  		margin-left: 15px;
+  	}
+  }
+}
+
+
+
+/*Profile page*/
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+
+/*Forms*/
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+/*Layout of categories and content*/
+
+#products_sidebar{
+  border: 4px solid red;
+  float: left;
+  width: 10%;
+}
+
+.content{
+  border: 4px solid blue;
+  float: right;
+  width: 90%;
 }
