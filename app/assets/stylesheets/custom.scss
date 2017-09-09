@@ -262,9 +262,6 @@ input {
   }
 */
 
-
-
-
 .snippet {
     background-size: cover;
     width: 500px;
@@ -277,6 +274,7 @@ input {
     right: 10%;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10px;
 }
 .snippet-content {
     width: 90%;
@@ -326,19 +324,28 @@ input {
     -o-background-size: contain;
     background-size: contain;
   }
-
   .snippet {
-    background-size: cover;
+    width: 100%;
+    margin: auto;
     position: absolute;
     background: black;
     opacity: 0.3;
+    border-radius: 10px;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    right: 0%;
+    .snippet-content {
+      width: 95%;
+      height: 95%;
+      background: black;
+      opacity: 0.5;
+      color: #fff;
   }
-  .snippet-content {
-    width: 95%;
-    height: 95%;
-    background: black;
-    opacity: 0.5;
-    color: #fff;
+  }
+
+  #carousel-generic > .carousel-indicators {
+    visibility: hidden;
   }
 
   #carousel-generic > .carousel-control {
