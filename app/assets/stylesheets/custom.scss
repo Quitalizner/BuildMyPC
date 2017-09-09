@@ -261,48 +261,34 @@ input {
     padding-right: 300px;
   }
 */
+
+
+
+
 .snippet {
     background-size: cover;
+    width: 500px;
     position: absolute;
     background: black;
     opacity: 0.3;
     left: 10%;
-    top: 3%;
-    bottom: 3%;
+    top: 10%;
+    bottom: 10%;
     right: 10%;
-  }
-  .snippet-content {
+    margin-left: auto;
+    margin-right: auto;
+}
+.snippet-content {
     width: 90%;
     height: 90%;
     background: black;
     opacity: 0.5;
     color: #fff;
 }
-/*@media screen and (max-width: 699px) and (min-width: 520px){
-  .snippet {
-    background-size: cover;
-    position: fixed;
-    background: black;
-    left: 0%;
-    top: 5%;
-    bottom: 5%;
-    padding: 20px 0;
-    opacity: 0.3;
-    margin-left: 0px;
-}
-
-  .snippet-content {
-    height: 100%;
-    background: black;
-    opacity: 0.5;
-    color: #fff;
-    margin-right: 15px;
-  }
-}*/
 
 #carousel-generic .item .slide-image {
   overflow: hidden;
-  height: 500px;
+  height: 800px;
   width: auto;
   background-color: transparent;
   -webkit-background-size: cover;
@@ -327,5 +313,40 @@ input {
   width: 100%;
   text-align: center;
   display: block;
+}
+
+@media screen and (max-width: 699px) and (min-width: 200px){
+  #carousel-generic .item .slide-image {
+    height: 400px;
+    overflow: hidden;
+    width: auto;
+    background-color: transparent;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+  }
+
+  .snippet {
+    background-size: cover;
+    position: absolute;
+    background: black;
+    opacity: 0.3;
+  }
+  .snippet-content {
+    width: 95%;
+    height: 95%;
+    background: black;
+    opacity: 0.5;
+    color: #fff;
+  }
+
+  #carousel-generic > .carousel-control {
+    visibility: hidden;
+  }
+
+  #carousel-generic > .carousel-control span{
+    visibility: hidden;
+  }
 }
 
