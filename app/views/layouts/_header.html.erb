@@ -1,11 +1,17 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <%= link_to "BuildMyPc", '#', id: "logo" %> 
-  <div class="container">
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "Help",   '#' %></li>
-      </ul>
-    </nav>
+  <div class="container"> 
+  	<div class="row">
+  		<div class="col-sm-6">
+	  		<%= link_to "BuildMyPc", home_path , id: "logo" %> 
+	    </div>
+		<div class="hidden-xs col-sm-6">
+		    <nav>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><%= link_to "Home", home_path %></li>
+		        <li><%= link_to "Help",   help_path %></li>
+		      </ul>
+			</nav>
+		</div>	
+	</div>
   </div>
 </header>

@@ -1,5 +1,19 @@
 <h1>Listing the products of all types</h1>
 
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<div class="jumbotron">
+				<p>This is a jumbotron</p>
+			</div>
+			<p>This is the original size outside jumbotron</p>
+			<div class="card">
+				<p>THis is a card</p>
+			</div>
+		</div>
+	</div>
+</div>
+
 <% @products.each do |product| %>
 	<li><%= product.name %></li>
 	<li> <%= image_tag(product.image.url(:thumbnail)) %> </li>

@@ -1,5 +1,11 @@
 <h1>Product lisiting of a single type</h1>
 
+<div class="container-full-bg">
+	<%= image_tag("Graphic.jpg", alt: "Graphic Image", class: "slide-image img-responsive")%>
+	<div class="container special">
+  		<div class="jumbotron"></div>
+	</div>
+</div>
 <% @products.each do |product| %>
 	<li><%= link_to product.name, product_path(product) %></li>
 	<li> <%= image_tag(product.image.url(:standard)) %> </li>

@@ -4,6 +4,8 @@
 
 
 $light-gray: #777;
+$gray-beige: #5b4c43;
+$light-neon: #aaaaaa;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -22,16 +24,20 @@ $light-gray: #777;
 	font-family: "Times New Roman", Times, serif;
 	font-weight: bold;
 	font-variant: small-caps;
-	margin: 50px;
-	padding: 10px;
+  float: left;
 	&:hover{
 		color: white;
 		text-decoration: none;
 	}
 }
 
+nav ul li{
+  font-weight: bold;
+}
 
-
+header.navbar {
+  padding: 40px;
+}
 
 /*Error on forms and actions*/
 
@@ -59,6 +65,7 @@ $light-gray: #777;
 
 body {
   padding-top: 60px;
+  background-color: $light-neon;
 }
 
 section {
@@ -163,13 +170,162 @@ input {
 /*Layout of categories and content*/
 
 #products_sidebar{
-  border: 4px solid red;
+  padding-left: 30px;
+  max-width: 10%;
   float: left;
   width: 10%;
+  margin-top: 150px;
+  position: relative;
+}
+
+.fixed {
+    position: fixed;
 }
 
 .content{
-  border: 4px solid blue;
   float: right;
-  width: 90%;
+  margin-right: 15%;
+  padding: 10%;
+  padding-left: 80px;
+  width: 70%;
+  background: white;
 }
+
+
+/* Full width Jumbotron image*/
+
+.jumbotron {background-color:inherit;}
+.container-full-bg {width:100%;height:100%;max-width:100%;background-position:center;background-size:cover; clear: both;}
+.container-full-bg .container, .container-full-bg .container .jumbotron {height:100%;width:100%;}
+
+/* Carousel snippet */
+/*
+.slide-wrapper {
+  position: relative;
+}
+
+.snippet-content{
+  width: 100%;
+  height: 300px;
+  background: black;
+  opacity: 0.5;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .carousel-caption {
+    text-align: left;
+    padding-right: 300px;
+  }
+  .snippet {
+    width: 750px;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    top: 0;
+    bottom: 0;
+    padding: 20px 0;
+    margin-left: -375px;
+  }
+  .snippet-content {
+    width: 300px;
+    float: right;
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+    color: #fff;
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .snippet {
+    width: 970px;
+    margin-left: -485px;
+  }
+}
+@media (min-width: 1200px) {
+  .snippet {
+    width: 1170px;
+    margin-left: -585px;
+  }
+}
+*/
+
+.slide-wrapper {
+  position: relative;
+}
+/* Not using now
+.carousel-caption {
+    text-align: left;
+    padding-right: 300px;
+  }
+*/
+.snippet {
+    background-size: cover;
+    position: absolute;
+    background: black;
+    opacity: 0.3;
+    left: 10%;
+    top: 3%;
+    bottom: 3%;
+    right: 10%;
+  }
+  .snippet-content {
+    width: 90%;
+    height: 90%;
+    background: black;
+    opacity: 0.5;
+    color: #fff;
+}
+/*@media screen and (max-width: 699px) and (min-width: 520px){
+  .snippet {
+    background-size: cover;
+    position: fixed;
+    background: black;
+    left: 0%;
+    top: 5%;
+    bottom: 5%;
+    padding: 20px 0;
+    opacity: 0.3;
+    margin-left: 0px;
+}
+
+  .snippet-content {
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+    color: #fff;
+    margin-right: 15px;
+  }
+}*/
+
+#carousel-generic .item .slide-image {
+  overflow: hidden;
+  height: 500px;
+  width: auto;
+  background-color: transparent;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#carousel-generic > .carousel-control {
+  width: 30px;
+  font-size: 40px;
+  color: #fff;
+  text-shadow: none;
+  filter: none;
+  opacity: 1;
+}
+
+#carousel-generic > .carousel-control span{
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
