@@ -1,6 +1,8 @@
 <h1>Product lisiting of a single type</h1>
+<% provide(:title,"#{@type.name}") %>
 
 <div class="container-full-bg">
+	<h3><%=@type.name%>S</h3>
 	<%= image_tag("Graphic.jpg", alt: "Graphic Image", class: "slide-image img-responsive")%>
 	<div class="container special">
   		<div class="jumbotron"></div>
@@ -9,9 +11,12 @@
 <% @products.each do |product| %>
 	<li><%= link_to product.name, product_path(product) %></li>
 	<li> <%= image_tag(product.image.url(:standard)) %> </li>
-	<li><%= link_to 'Edit', edit_product_path(product, val: "true" ) %></li>
-	<li><%= link_to 'Delete', product_path(product, val: "true" ) , method: :delete, data: {confirm: "Are u sure?"} %>
-	</li>
+	<% if logged_in? %>
+		<li><%= link_to 'Edit', edit_product_path(product, val: "true" ) %></li>
+		<li><%= link_to 'Delete', product_path(product, val: "true" ) , method: :delete, data: {confirm: "Are You sure?"} %></li>
+	<% end %>
 <%end%>
 
-<h4><%= link_to "Create New Products", new_product_path(value: @type.value)%></h4>
+<% if logged_in? %>
+	<h4><%= link_to "Create New Products", new_product_path(value: @type.value)%></h4>
+<% end %>

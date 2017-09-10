@@ -1,7 +1,8 @@
-<h1>Add the New Product Attribute</h1>
+<% provide(:title,"Add Product") %>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+  	<h3>ADD NEW PRODUCT</h3>
 	<%= form_for(@product, url: products_path(@product, val: "true"), html: { multipart: true }) do |f|%>		<!-- #multipart is used when there is file upload in the form.-->
 	    <%= render 'shared/error_messages', object: f.object %>
 		

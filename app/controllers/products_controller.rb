@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+	before_action :logged_in_user, only: [:new, :allitems, :edit, :update, :create, :destroy]
+	before_action :admin_user, only: [:new, :allitems, :edit, :update, :create, :destroy]
 
 	def index
 		@products = Product.all 		#All products or each and every type
@@ -62,7 +64,18 @@ class ProductsController < ApplicationController
 
 	private
 
-	def product_params
-		params.require(:product).permit(:name,:value,:description,:specification,:price,:image)
-	end
+		def product_params
+			params.require(:product).permit(:name,:value,:description,:specification,:price,:image)
+		end
+
+		def logged_in_user
+	      	unless logged_in?
+	        	flash[:danger]="Routing Error"
+	        	redirect_to home_url
+	      	end
+	    end
+
+	    def admin_user
+	     	redirect_to(root_url) unless current_user.admin?
+	    end
 end

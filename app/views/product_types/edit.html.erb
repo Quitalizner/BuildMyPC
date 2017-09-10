@@ -1,9 +1,9 @@
-<h1>Edit Product Type</h1>
-
+<% provide(:title,"Edit Type") %>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 	<%= form_for(@type, url: product_type_path, method: :patch) do |f| %>	<!-- edit for product_type model(@type) url: go to product_type controller with update action -->
+		<h3>Edit Details!</h3>
 		<%= render 'shared/error_messages', object: f.object %>
 
 		<%= f.label :name %>

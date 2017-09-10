@@ -1,5 +1,6 @@
 class ProductTypesController < ApplicationController
-
+	before_action :logged_in_user, only: [:new, :allitems, :edit, :update, :create, :destroy]
+	before_action :admin_user, only: [:new, :allitems, :edit, :update, :create, :destroy]
 
 	def index
 		@types = ProductType.all 		#to get all the records to an instance variable(array in the case) lasts only until the scope lasts. Since the is defined in index, it lasts only till you are using the index view
@@ -46,4 +47,15 @@ class ProductTypesController < ApplicationController
 		def type_params
 			params.require(:product_type).permit(:name,:value)  	#used to only permit type and value thorugh request(to prevent hacking) used in create and update action above
 		end
+
+		def logged_in_user
+	      	unless logged_in?
+	        	flash[:danger]="Routing Error"
+	        	redirect_to home_url
+	      	end
+	    end
+
+	    def admin_user
+	     	redirect_to(root_url) unless current_user.admin?
+	    end
 end

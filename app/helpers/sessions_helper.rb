@@ -18,5 +18,8 @@ module SessionsHelper
 		session.delete(:user_id)
 		@current_user = nil
 	end
-	
+
+	def not_found
+  		raise ActionController::RoutingError.new('Not Found')
+	end
 end

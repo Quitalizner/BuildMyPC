@@ -1,7 +1,9 @@
-<h1>Add Product of any type</h1>
+<% provide(:title,"Add") %>
+
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+  	<h3>ADD ANY PRODUCT</h3>
 	<%= form_for(@product, url: products_path, html: {multipart: true}) do |f|%>
 		<%= render 'shared/error_messages', object: f.object %>
 

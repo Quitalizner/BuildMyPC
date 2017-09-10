@@ -1,10 +1,14 @@
-<h1>Listing the types of products</h1>
+<% provide(:title,"Index") %>
+
 <% @types.each do |type| %>				
 	<li><%= link_to type.name, product_type_path(type)%>	<!-- go to product_type controller show action-->
-		<%= link_to "Edit", edit_product_type_path(type) %>	<!-- go to product_type controller edit action -->
-		<%= link_to "Delete", product_type_path(type) , method: :delete, data: { confirm: "Are U Sure?" }%>		<!-- go to product_type controller delete action and a pop to confirm the action -->
+		<% if logged_in? %>
+			<%= link_to "Edit", edit_product_type_path(type) %>	<!-- go to product_type controller edit action -->
+			<%= link_to "Delete", product_type_path(type) , method: :delete, data: { confirm: "Are You Sure?" }%>		<!-- go to product_type controller delete action and a pop to confirm the action -->
+		<% end %>
 	</li>
 <% end %>
-
-<h3><%= link_to "New Type Of Product", new_product_type_path %></h3>
-<h3><%= link_to "All Types of Products", products_path %></h3> <!-- All types of products listed for admin's ease -->
+<% if logged_in? %>
+	<h3><%= link_to "New Type Of Product", new_product_type_path %></h3>
+	<h3><%= link_to "All Types of Products", products_path %></h3> <!-- All types of products listed for admin's ease -->
+<% end %>

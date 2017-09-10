@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-	#before_action :logged_in_user, only: [:new, :edit, :update, :destroy]
-	#before_action :admin_user, only: [:new, :edit, :update, :destroy]
+	before_action :logged_in_user
+	before_action :admin_user
 
 	def index
 		@users = User.all
@@ -46,19 +46,19 @@ class UsersController < ApplicationController
 
   	private
 
-  	def user_params
-  		params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  	end
+	  	def user_params
+	  		params.require(:user).permit(:name, :email, :password, :password_confirmation)
+	  	end
 
-  		    # Confirms a logged-in user.
-    def logged_in_user
-      	unless logged_in?
-        	flash[:danger] = "Access Denied"
-        	redirect_to root_url
-      	end
-    end
+	  		    # Confirms a logged-in user.
+	    def logged_in_user
+	      	unless logged_in?
+	        	flash[:danger]="Routing Error"
+	        	redirect_to home_url
+	      	end
+	    end
 
-    def admin_user
-     	redirect_to(root_url) unless current_user.admin?
-    end
+	    def admin_user
+	     	redirect_to(root_url) unless current_user.admin?
+	    end
 end
