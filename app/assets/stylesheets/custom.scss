@@ -199,11 +199,9 @@ input {
   float: left;
   width: 10%;
   position: relative;
-  div{
-    background-color: transparent;
-    border-radius: 5px;
-  }
+  cursor:pointer;
   li{
+    list-style: none;
     text-decoration: none;
   }
   h5{
@@ -216,17 +214,19 @@ input {
   }
 }
 
+
 .image-container .icon{
   height: 50px;
   width: 50px;
   border-radius: 100%;
   color: gray;
-
 }
 
 .fixed {
     position: fixed;
-
+    background-color: transparent;
+    border-radius: 30px/30px;
+    box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.6);
 }
 
 .content{
@@ -236,6 +236,7 @@ input {
   padding-left: 80px;
   width: 70%;
   background: #eeeeee;
+  margin-bottom: 10%;
   @include page_shadow;
 }
 
@@ -393,6 +394,7 @@ input {
 #home-container{
   background: linear-gradient(to right, rgb(76,76,76) 0%,rgb(135,135,135) 8%,rgb(102,102,102) 34%,rgb(71,71,71) 39%,rgb(44,44,44) 51%,rgb(0,0,0) 79%,rgb(17,17,17) 84%,rgb(43,43,43) 87%,rgb(28,28,28) 91%,rgb(17,17,17) 94%,rgb(19,19,19) 100%); /* rgba a=0 tranparent a=1 opaque */
   margin-top: 50px;
+  padding-bottom: 50px;
 }
 
 #content-container{
@@ -401,6 +403,60 @@ input {
   margin: auto;
   margin-top: 75px;
   @include page_shadow;
+  .row{
+    height: 240px;
+    width: 100%;
+    border-bottom: 1px solid #333333;
+    margin-left: 0%;
+    .col-md-4{
+      width: 40%;
+      height: 55%;
+      max-width: 260px;
+      max-height: 120px;
+      margin: 8% auto 5% 10%;  
+      background: cyan;
+      -moz-border-radius: 100px / 50px;
+      -webkit-border-radius: 100px / 50px;
+      border-radius: 60% / 60%;
+      border-bottom: 5px solid #333333;
+      cursor:pointer;
+      vertical-align:middle;
+      text-align: center;
+      h6{
+        font: bold 1em helvetica;
+        padding-top: 18%;
+      }
+      &:active {
+        background: gray;
+        box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+        color: white;
+      }
+    }
+    .col-md-6{
+      width: 40%;
+      margin: 6% 3% 3% 15%;
+    }
+    #mid2{
+      margin-left: -25%;
+      margin-right: 0%;
+    }
+    #mid{
+      border-bottom: 5px solid cyan;
+      background: #333333;
+      float: right;
+      margin-right: 10%;
+      h6{
+        color: cyan;
+      }
+      &:active {
+        background: cyan;
+        box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+        h6{
+        color: white;
+        }
+      }
+    }
+  }
 }
 
 
@@ -476,15 +532,22 @@ input {
     width: 100%;
   }
 
-h3{
-  font: bold 2em helvetica;
-  text-align: center;
-  margin-bottom: 50px;
-  margin-top: 0px;
-}
+  h3{
+    font: bold 2em helvetica;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 0px;
+  }
 
+  footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-bottom: 1px solid cyan;
+    border-top: 1px solid cyan;
+  }
 }
-
 
 #content-container::after{
   content: " "; /* to clear the logo and nav elements */
