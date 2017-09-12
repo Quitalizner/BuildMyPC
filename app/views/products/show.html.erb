@@ -1,12 +1,9 @@
 <div class="row">
-  <aside class="col-md-4">
-    <section>
-      <h1>
-		<%= image_tag(@product.image_url(:large)) %>
-		<%= @product.name %>
-		<%= @product.description %>
-		<%= @product.price %>
-      </h1>
-    </section>
-  </aside>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="disp-image"><%= image_tag(@product.image_url(:large)) %></div>
+		<div class="name"><strong><%= @product.name %></strong></div>
+    <div class="price"><strong>Rs:  <%= @product.price %>\-</strong></div>
+		<div class="description"><span>Description</span><%= sanitize @product.description, tags: %w(strong em p br div ul ol li) %></div>
+    <div class="specification"><span>Specification</span><%= sanitize @product.specification, tags: %w(strong em p br div ul ol li) %></div>
+  </div>
 </div>

@@ -19,6 +19,16 @@ $light-neon: #cccccc;
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
+
+@mixin spanner{
+    span{
+    display: block;
+    font: bold 2em arial;
+    margin-bottom: 41px;
+    border-bottom: 2px solid cyan;
+    font-variant: small-caps;
+  }
+}
 /* header*/
 
 #logo{
@@ -93,8 +103,8 @@ textarea {
 h3{
   font: bold 5em helvetica;
   text-align: center;
-  margin-bottom: 200px;
-  margin-top: -150px;
+  margin-bottom: 15%;
+  margin-top: 10%;
 }
 
 
@@ -232,12 +242,15 @@ input {
 .content{
   float: right;
   margin-right: 15%;
-  padding: 10%;
-  padding-left: 80px;
+  padding-bottom: 5%;
   width: 70%;
   background: #eeeeee;
   margin-bottom: 10%;
   @include page_shadow;
+  .row{
+    margin-left: 5%;
+    margin-right: 0%;
+  }
 }
 
 
@@ -519,3 +532,79 @@ input {
 
     /*text-align: justify;*/
     /*text-justify: inter-word;*/
+
+
+/*trix editor forms*/
+
+trix-editor {
+
+  word-wrap: break-word;
+  overflow: scroll;
+  max-height: 15em;
+
+}
+
+/*show page css*/
+
+.disp-image{
+  margin: 20% 60% 0% -60%;
+  overflow: scroll;
+  box-shadow: 0 5px 5px -1px rgba(0,0,0,0.6);
+  border: 1px solid silver;
+}
+
+div.name{
+  margin: -90% -50% 0% 49%;
+  padding: 10%;
+  border-bottom: 1px solid gray;
+}
+
+div.price{
+  margin: 0% -50% 10% 49%;
+  padding: 8% 10% 8%;
+  border-bottom: 1px solid gray; 
+}
+
+div.description{
+  margin: 0% -50% 15% 49%;
+  padding: 10%;
+  border-bottom: 1px solid gray;
+  @include spanner;
+}
+
+div.specification{
+  margin: 0% -30% 0% -40%;
+  padding: 10%;
+  border-bottom: 1px solid gray;
+  box-shadow: 0 5px 5px -1px rgba(0,0,0,0.6);
+  @include spanner;
+}
+
+.bg{ 
+  position: relative;
+  z-index: 1;
+  img{
+  width: 100%;
+  height: 350px; /*same height as jumbotron */
+  }
+}
+
+.jumbotron {
+  height: 350px;
+  color: white;
+  text-shadow: #444 0 5px 5px;
+  background:transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  font-variant: small-caps;
+  p.lead{
+    font-size: 2em;
+    font-weight: 300;
+  }
+}
+
+strong{
+  font: normal x-large verdana;
+}

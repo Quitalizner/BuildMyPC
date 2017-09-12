@@ -15,10 +15,10 @@
 
 
 		<%= f.label :description %>
-		<%= f.text_field :description, class: 'form-control' %>
+		<%= f.trix_editor :description %>
 
 		<%= f.label :specification %>
-		<%= f.text_field :specification, class: 'form-control' %>
+		<%= f.trix_editor :specification %>
 
 		<%= f.label :price %>
 		<%= f.number_field :price, class: 'form-control' %>

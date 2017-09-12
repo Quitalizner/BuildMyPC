@@ -1,29 +1,29 @@
 <% provide(:title,"All Products") %>
 
-<div class="container">
-	<div class="row">
-		<div class="col-12">
-			<h3>ALL PRODUCTS</h3>
-			<div class="jumbotron">
-				<p>This is a jumbotron</p>
-			</div>
-			<p>This is the original size outside jumbotron</p>
-			<div class="card">
-				<p>THis is a card</p>
-			</div>
-		</div>
+<div class="bg"><%= image_tag("System.jpg", alt: "Graphic Image", class: "slide-image img-responsive")%>
+	<div class="jumbotron">
+		<h1>We offer a lot</h1>
+		<p class="lead">But the choice is yours</p>
 	</div>
 </div>
 
-<% @products.each do |product| %>
-	<li><%= product.name %></li>
-	<li> <%= image_tag(product.image.url(:thumbnail)) %> </li>
-	<% if logged_in? %>
-		<li><%= link_to "Edit", edit_product_path(product) %></li>
-		<li><%= link_to "Delete", product_path(product), method: :delete, data: {confirm: "Are You Sure?" } %></li>
-	<% end %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<% if logged_in? %>
+			<h2><%= link_to "Create Product Items", products_allitems_path %></h2>
+		<% end %>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<% @products.each do |product| %>
+			<li><%= link_to product.name, product_path(product) %></li>
+			<li> <%= image_tag(product.image.url(:thumbnail)) %> </li>
+			<% if logged_in? %>
+				<li><%= link_to "Edit", edit_product_path(product) %></li>
+				<li><%= link_to "Delete", product_path(product), method: :delete, data: {confirm: "Are You Sure?" } %></li>
+			<% end %>
+		<% end %>
+	</div>
+</div>
 
-<% if logged_in? %>
-	<h3><%= link_to "Create Product Items", products_allitems_path %></h3>
-<% end %>

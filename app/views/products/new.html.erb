@@ -12,10 +12,10 @@
 		<%= f.hidden_field :value, :value => params[:value] %>							<!-- # Used to hide the value attribute and specifying the value to the form( so that the type of product cannot be changed or added while submitting )-->
 
 		<%= f.label :description %>
-		<%= f.text_field :description, class: 'form-control' %>
+		<%= f.trix_editor :description %>
 
 		<%= f.label :specification %>
-		<%= f.text_field :specification, class: 'form-control' %>
+		<%= f.trix_editor :specification %>
 
 		<%= f.label :price %>
 		<%= f.number_field :price, class: 'form-control' %>
