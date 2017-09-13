@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 	before_action :admin_user, only: [:new, :allitems, :edit, :update, :create, :destroy]
 
 	def index
-		@products = Product.all 		#All products or each and every type
+		@products = Product.paginate(page: params[:page])		#All products or each and every type
 	end
 
 	def allitems

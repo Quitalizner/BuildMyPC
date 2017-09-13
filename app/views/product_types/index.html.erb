@@ -8,7 +8,8 @@
 		<% end %>
 	</li>
 <% end %>
+<h3><%= link_to "All Types of Products", products_path %></h3>
 <% if logged_in? %>
-	<h3><%= link_to "New Type Of Product", new_product_type_path %></h3>
-	<h3><%= link_to "All Types of Products", products_path %></h3> <!-- All types of products listed for admin's ease -->
+	<h3><%= link_to "Add a Type", new_product_type_path %></h3>
+	 <!-- All types of products listed for admin's ease -->
 <% end %>

@@ -73,7 +73,10 @@ header.navbar {
 }
 
 .flash {
-	margin-top: 105px;
+	margin-top: 75px;
+  .alert{
+    margin-bottom: 0px;
+  }
 }
 
 /*Universal*/
@@ -237,6 +240,9 @@ input {
     background-color: transparent;
     border-radius: 30px/30px;
     box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.6);
+    margin-top: 1%;
+    z-index: 11;
+
 }
 
 .content{
@@ -247,18 +253,10 @@ input {
   background: #eeeeee;
   margin-bottom: 10%;
   @include page_shadow;
-  .row{
-    margin-left: 5%;
-    margin-right: 0%;
-  }
 }
 
 
-/* Full width Jumbotron image*/
 
-.jumbotron {background-color:inherit;}
-.container-full-bg {width:100%;height:100%;max-width:100%;background-position:center;background-size:cover; clear: both;}
-.container-full-bg .container, .container-full-bg .container .jumbotron {height:100%;width:100%;}
 
 .slide-wrapper {
   position: relative;
@@ -311,7 +309,6 @@ input {
 #cf {
   height:800px;
   width: auto;
-  margin-top: -50px;
     /* Create the parallax scrolling effect */
 }
 
@@ -547,33 +544,29 @@ trix-editor {
 /*show page css*/
 
 .disp-image{
-  margin: 20% 60% 0% -60%;
+  margin-top: 10%;
   overflow: scroll;
   box-shadow: 0 5px 5px -1px rgba(0,0,0,0.6);
   border: 1px solid silver;
 }
 
 div.name{
-  margin: -90% -50% 0% 49%;
   padding: 10%;
   border-bottom: 1px solid gray;
 }
 
 div.price{
-  margin: 0% -50% 10% 49%;
   padding: 8% 10% 8%;
   border-bottom: 1px solid gray; 
 }
 
 div.description{
-  margin: 0% -50% 15% 49%;
   padding: 10%;
   border-bottom: 1px solid gray;
   @include spanner;
 }
 
 div.specification{
-  margin: 0% -30% 0% -40%;
   padding: 10%;
   border-bottom: 1px solid gray;
   box-shadow: 0 5px 5px -1px rgba(0,0,0,0.6);
@@ -607,4 +600,33 @@ div.specification{
 
 strong{
   font: normal x-large verdana;
+}
+ 
+.pagination{
+    width: 100%;
+    padding: 0% 25%;
+}
+
+#border-show{
+  &:hover{
+    box-shadow: 0 3px 3px -1px rgba(0,0,0,0.6);
+  }
+  linc a{
+    color: black;
+    &:hover{
+      color: maroon;
+      text-decoration: none;
+    }
+  }
+  name a{
+    color: #333333;
+    font-size: 1.2em;
+    &:hover{
+      color: cyan;
+      text-decoration: none;
+    }
+  }
+  h2{
+    font-size: 2em;
+  }
 }

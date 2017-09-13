@@ -1,5 +1,7 @@
 <% provide(:title,"Users") %>
 
+<%= will_paginate %>
+
 <ul class="users">
 	<h3>USERS LIST</h3>
   <% @users.each do |user| %>
@@ -12,3 +14,5 @@
   	<% end %>	
   <% end %>
 </ul>
+
+<%= will_paginate %>

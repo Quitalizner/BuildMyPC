@@ -3,7 +3,7 @@ class ProductTypesController < ApplicationController
 	before_action :admin_user, only: [:new, :allitems, :edit, :update, :create, :destroy]
 
 	def index
-		@types = ProductType.all 		#to get all the records to an instance variable(array in the case) lasts only until the scope lasts. Since the is defined in index, it lasts only till you are using the index view
+		@types = ProductType.paginate(page: params[:page]) 		#to get all the records to an instance variable(array in the case) lasts only until the scope lasts. Since the is defined in index, it lasts only till you are using the index view
 	end
 
 	def new
@@ -12,7 +12,7 @@ class ProductTypesController < ApplicationController
 
 	def show
 		@type = ProductType.find(params[:id])		#Finding the type of product click on
-		@products = Product.where(value: @type.value)		#finding all the products whose value field is same as the type of product value(primary key) 
+		@products = Product.where(value: @type.value).paginate(page: params[:page])		#finding all the products whose value field is same as the type of product value(primary key) 
 	end
 
 	def create

@@ -10,11 +10,11 @@ class ImageUploader < CarrierWave::Uploader::Base
 
 
   version :large do
-    process :resize_to_fill => [450,450, :north]
+    process :resize_to_fit => [650,500, :north]
   end
   
   version :standard do
-    process :resize_to_fill => [100,150, :north]
+    process :resize_to_fill => [350,215, :north]
   end
 
   version :thumbnail do
