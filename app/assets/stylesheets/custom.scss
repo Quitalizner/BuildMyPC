@@ -216,6 +216,14 @@ input {
   li{
     list-style: none;
     text-decoration: none;
+    a{
+      color: #333333;
+      font-weight: 400;
+      &:hover{
+        text-decoration: none;
+        color: silver;
+      }
+    }
   }
   h5{
     font: bold 1em helvetica;
@@ -295,11 +303,11 @@ input {
       color: white;
     }
     a{
+      color: white;
       margin: 8% 25% 10% 39%;
       background-color: #333333;
-      color: cyan;
       border-color: #333333;
-      font: bold 18px helvetica;
+      font: normal 18px helvetica;
     }
   }
 }
@@ -629,4 +637,8 @@ strong{
   h2{
     font-size: 2em;
   }
+}
+
+.collapse{
+  padding: 10%;
 }

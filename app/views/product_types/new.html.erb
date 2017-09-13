@@ -1,18 +1,5 @@
 <% provide(:title,"Add Type") %>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-	<%= form_for(@type, url: product_types_path) do |f| %>	<!-- since the path is product_types (with types instead of type in the url) it call the create action hence no need to provide method -->
-		<h3>ADD TYPE!</h3>
-		<%= render 'shared/error_messages', object: f.object %>
-
-		<%= f.label :name %>
-		<%= f.text_field :name, class: 'form-control' %>
-
-		<%= f.label :value %>
-		<%= f.number_field :value, class: 'form-control' %>
-
-		<%= f.submit "Create", class: "btn btn-primary" %>
-	<% end %>
-  </div>
-</div>
+<% provide(:content,"Add Type") %>
+<% provide(:button,"Create") %>
+<% provide(:url,"form_for(@type, url: product_types_path)")%>
+<%= render 'form' %>  <!-- locals sends the parameter @type through by defining type --> 

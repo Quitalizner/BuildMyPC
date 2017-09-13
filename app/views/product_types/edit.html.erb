@@ -1,18 +1,5 @@
 <% provide(:title,"Edit Type") %>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-	<%= form_for(@type, url: product_type_path, method: :patch) do |f| %>	<!-- edit for product_type model(@type) url: go to product_type controller with update action -->
-		<h3>Edit Details!</h3>
-		<%= render 'shared/error_messages', object: f.object %>
-
-		<%= f.label :name %>
-		<%= f.text_field :name, class: 'form-control' %>
-
-		<%= f.label :value %>
-		<%= f.number_field :value, class: 'form-control' %>
-
-		<%= f.submit "Update", class: "btn btn-primary" %>
-	<% end %>
-  </div>
-</div>
+<% provide(:content,"Edit Type") %>
+<% provide(:button,"Update") %>
+<% provide(:link,"form_for(@type, url: product_type_path, method: :patch)") %>	<!-- edit for product_type model(@type) url: go to product_type controller with update action -->
+<%= render 'form' %>		 <!-- locals sends the parameter @type through by defining type --> 

@@ -11,6 +11,6 @@ module ApplicationHelper
 
 	def products_sidebar
 	    products = ProductType.all # Or whatever you like
-	    render partial: "shared/products_sidebar", locals: {products: products}
+	    render partial: "shared/products_sidebar", locals: {products: products}		   #locals sends the parameter @type through by defining type
   	end
 end
