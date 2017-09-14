@@ -1,29 +1,26 @@
 class ProductsController < ApplicationController
 	before_action :logged_in_user, only: [:new, :allitems, :edit, :update, :create, :destroy]
 	before_action :admin_user, only: [:new, :allitems, :edit, :update, :create, :destroy]
+	before_action :find_id, only: [:edit, :show, :update, :destroy]
+	before_action :for_new, only: [:new, :allitems]
 
 	def index
 		@products = Product.paginate(page: params[:page])		#All products or each and every type
 	end
 
-	def allitems
-		@product = Product.new			#For the new action in the view listing products of all types
+	def allitems			#For the new action in the view listing products of all types
 	end
 
-	def new
-		@product = Product.new   		#For the new action for a specific type of product
+	def new   		#For the new action for a specific type of product
 	end
 
 	def edit
-		@product = Product.find(params[:id])
 	end
 
 	def show
-		@product = Product.find(params[:id])
 	end
 
 	def update
-		@product = Product.find(params[:id])
 		if @product.update(product_params)
 			if params[:val] == "true"
 				redirect_to product_path 		#Show action view
@@ -45,14 +42,13 @@ class ProductsController < ApplicationController
 				redirect_to products_path
 			end
 		elsif params[:val] == "true"
-			redirect_to new_product_url
+			render 'new'
 		else
-			redirect_to products_allitems_url
+			render 'allitems'
 		end
 	end
 
 	def destroy
-		@product = Product.find(params[:id])
 		@product.destroy
 		if params[:val] == "true"
 			product_id = ProductType.find_by(value: @product.value)
@@ -78,4 +74,13 @@ class ProductsController < ApplicationController
 	    def admin_user
 	     	redirect_to(root_url) unless current_user.admin?
 	    end
+
+	    def find_id
+	    	@product = Product.find(params[:id])
+	    end
+
+	    def for_new
+	    	@product = Product.new
+	    end
+
 end

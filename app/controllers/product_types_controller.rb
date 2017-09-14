@@ -1,6 +1,7 @@
 class ProductTypesController < ApplicationController
 	before_action :logged_in_user, only: [:new, :allitems, :edit, :update, :create, :destroy]
 	before_action :admin_user, only: [:new, :allitems, :edit, :update, :create, :destroy]
+	before_action :find_id, only: [:show, :edit, :update]
 
 	def index
 		@types = ProductType.paginate(page: params[:page]) 		#to get all the records to an instance variable(array in the case) lasts only until the scope lasts. Since the is defined in index, it lasts only till you are using the index view
@@ -10,8 +11,7 @@ class ProductTypesController < ApplicationController
 		@type = ProductType.new			#to create a new record into the respective model
 	end
 
-	def show
-		@type = ProductType.find(params[:id])		#Finding the type of product click on
+	def show		
 		@products = Product.where(value: @type.value).paginate(page: params[:page])		#finding all the products whose value field is same as the type of product value(primary key) 
 	end
 
@@ -25,11 +25,9 @@ class ProductTypesController < ApplicationController
 	end
 
 	def edit
-		@type = ProductType.find(params[:id])
 	end
 
 	def update
-		@type = ProductType.find(params[:id])
 		if @type.update(type_params)				#update the params
 			redirect_to root_url					#if updated redirect to root
 		else						
@@ -39,6 +37,7 @@ class ProductTypesController < ApplicationController
 
 	def destroy
 		ProductType.find(params[:id]).destroy		#destroy the record
+		flash[:success] = "Delete Successful"
 		redirect_to root_url						#redirect to root 
 	end
 
@@ -57,5 +56,9 @@ class ProductTypesController < ApplicationController
 
 	    def admin_user
 	     	redirect_to(root_url) unless current_user.admin?
+	    end
+
+	    def find_id
+	    	@type = ProductType.find(params[:id])			#Finding the type of product click on
 	    end
 end

@@ -1,18 +1,12 @@
 <% provide(:title,"Users") %>
 
-<%= will_paginate %>
+<div class="container-fluid">
+  <%= will_paginate %>
+</div>
 
-<ul class="users">
-	<h3>USERS LIST</h3>
-  <% @users.each do |user| %>
-    <li>
-      <%= gravatar_for user, size: 50 %>
-      <%= link_to user.name, user %>
-    </li>
-    <% if logged_in? %>
-		  <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %>
-  	<% end %>	
-  <% end %>
-</ul>
+<h3>USERS LIST</h3>
+  	<%= render @users %>             	<!-- creates a looping statement like @users.each do |user| and links to the _user.html.erb partial -->
 
-<%= will_paginate %>
+<div class="container-fluid">
+  <%= will_paginate %>
+</div>
