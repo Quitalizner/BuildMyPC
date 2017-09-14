@@ -1,6 +1,6 @@
 <% provide(:title,"#{@type.name}") %>
 
-<div class="bg"><%= image_tag("System.jpg", alt: "Graphic Image", class: "slide-image img-responsive")%>
+<div class="bg"><%= image_tag("#{@type.name}.jpg", alt: "Graphic Image", class: "slide-image img-responsive")%>
 	<div class="jumbotron">
 		<h1><%= @type.name %>S</h1>
 	</div>
