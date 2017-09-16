@@ -34,6 +34,45 @@
 	</div>
 </div> -->
 
+<!-- the three home buttons
+<div class="separator"></div>
+<div class="container-fluid" id="home-container">
+  <div class="row" id="Link-to-last">
+    <div id="content-container">
+      <div class="row">
+        <%= image_tag(#"homedecoredited.jpg", alt: "Graphic Image", class: "slide-image img-responsive")%>
+        <div class="col-md-4 col-xs-12" onClick="window.location='<%=products_path%>';">
+          <h6>Products</h6>
+        </div>
+        <div class="hidden-xs col-md-6">
+          <p>Get started by browsing thorugh the list of products we have to offer. Click on
+          button</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="hidden-xs col-md-6" id="mid2">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commode.</p>
+        </div>
+        <div class="col-md-4  col-xs-12" id="mid" >
+          <h6>water is good for health</h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4  col-xs-12" >
+          <h6>water is good for health</h6>
+        </div>
+        <div class="hidden-xs col-md-6">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commode.</p>
+        </div>
+      </div>      
+    </div>
+  </div>
+</div>
+ -->
 
 
 
@@ -87,4 +126,99 @@
 #carousel-generic > .carousel-control span{
     visibility: hidden;
   }
- -->
+
+
+#content-container{
+  background: #eeeeee;;
+  width: 60%;
+  margin: auto;
+  margin-top: 75px;
+  @include page_shadow;
+  .row{
+    height: 240px;
+    width: 100%;
+    border-bottom: 1px solid #333333;
+    margin-left: 0%;
+    .col-md-4{
+      width: 40%;
+      height: 55%;
+      max-width: 260px;
+      max-height: 120px;
+      margin: 5% auto 5% 10%;  
+      background: gray;
+      -moz-border-radius: 100px / 50px;
+      -webkit-border-radius: 100px / 50px;
+      border-radius: 60% / 60%;
+      border-bottom: 5px solid cyan;
+      cursor:pointer;
+      vertical-align:middle;
+      text-align: center;
+      color: cyan;
+      h6{
+        font: bold 1.5em verdana;
+        padding-top: 15%;
+      }
+      &:active {
+        background: #ccc;
+        box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+        color: black;
+        border-bottom: 5px solid #333333;
+      }
+    }
+    .col-md-6{
+      width: 40%;
+      padding-top: 4%;
+      margin-left: 10%;
+      p{
+        font: bold 1em georgia;
+        &::first-letter{
+          color: cyan;
+          font-size: 200%;
+        }
+      }
+    }
+    #mid2{
+      margin-left: 10%;
+      margin-right: 0%;
+      padding: 4% 0% 0% 0%;
+    }
+    #mid{
+      border-bottom: 5px solid #333333;
+      background: cyan;
+      float: right;
+      margin-right: 10%;
+      color: #333333;
+      &:active {
+        background: #333333;
+        box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+        border-bottom: 5px solid cyan;
+        color: white;
+      }
+    }
+  }
+} -->
+
+<!-- 
+<div class="separator"></div>
+<div class="container-fluid" id="home-container">
+  <div class="row">
+    <div class="home-image"><%= image_tag("homedecoredited.jpg", alt: "Graphic Image")%>
+      <div class="inner-text">
+        <p>Get started by browsing thorugh the list of products we have to offer</p>
+      </div>
+      <div class="inner-button">
+        <a href="#Link-to-last" class="btn btn-default btn-lg">Products</a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="home-image"><%= image_tag("homedecoredited.jpg", alt: "Graphic Image")%>
+      <div class="inner-text">
+        <p>Get started by browsing thorugh the list of products we have to offer</p>
+      </div>
+      <div class="inner-button">
+        <a href="#Link-to-last" class="btn btn-default btn-lg">Products</a>
+      </div>
+    </div>
+  </div>
+</div> -->

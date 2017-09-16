@@ -9,7 +9,7 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<% if logged_in? %>
+		<% if logged_in? && current_user.admin? %>
 			<h2><%= link_to "Create New Products", new_product_path(value: @type.value)%></h2>
 		<% end %>
 	</div>

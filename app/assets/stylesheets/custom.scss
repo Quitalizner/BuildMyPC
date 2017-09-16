@@ -73,7 +73,7 @@ header.navbar {
 }
 
 .flash {
-	margin-top: 75px;
+	margin-top: 70px;
   .alert{
     margin-bottom: 0px;
   }
@@ -115,8 +115,7 @@ h3{
 /* footer */
 
 footer {
-  position: relative;
-  bottom: 0;
+  position: initial;
   background: #333333;
   padding-top: 25px;
   padding-bottom: 20px;
@@ -354,7 +353,7 @@ input {
 #cf img{
   position:fixed;
   z-index:-1;
-  height: 80%;
+  height: 100%;
   width: 100%;
   left:0;
   -webkit-transition: opacity 1s ease-in-out;
@@ -391,76 +390,41 @@ input {
   padding-bottom: 50px;
 }
 
-#content-container{
-  background: #eeeeee;;
+.home-image{
+  position: relative;
   width: 60%;
   margin: auto;
-  margin-top: 75px;
-  @include page_shadow;
-  .row{
-    height: 240px;
+  z-index: 1;
+  img{
+    height: 450px;
     width: 100%;
-    border-bottom: 1px solid #333333;
-    margin-left: 0%;
-    .col-md-4{
-      width: 40%;
-      height: 55%;
-      max-width: 260px;
-      max-height: 120px;
-      margin: 5% auto 5% 10%;  
-      background: gray;
-      -moz-border-radius: 100px / 50px;
-      -webkit-border-radius: 100px / 50px;
-      border-radius: 60% / 60%;
-      border-bottom: 5px solid cyan;
-      cursor:pointer;
-      vertical-align:middle;
-      text-align: center;
-      color: cyan;
-      h6{
-        font: bold 1.5em verdana;
-        padding-top: 15%;
-      }
-      &:active {
-        background: #ccc;
-        box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
-        color: black;
-        border-bottom: 5px solid #333333;
-      }
-    }
-    .col-md-6{
-      width: 40%;
-      padding-top: 4%;
-      margin-left: 10%;
-      p{
-        font: bold 1em georgia;
-        &::first-letter{
-          color: cyan;
-          font-size: 200%;
-        }
-      }
-    }
-    #mid2{
-      margin-left: 10%;
-      margin-right: 0%;
-      padding: 4% 0% 0% 0%;
-    }
-    #mid{
-      border-bottom: 5px solid #333333;
-      background: cyan;
-      float: right;
-      margin-right: 10%;
-      color: #333333;
-      &:active {
-        background: #333333;
-        box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
-        border-bottom: 5px solid cyan;
-        color: white;
-      }
-    }
+    border-radius: 5px;
   }
 }
 
+.inner-text{
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  right: 20%;
+  z-index: 10;
+  font-size: 2em;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  text-justify: inter-word;
+  &::first-letter{
+    color: cyan;
+    font-size: 200%;
+  }
+}
+
+.inner-button{
+  position: absolute;
+  top: 80%;
+  left: 45%;
+  z-index: 10;
+}
 
 
 /*If screen lesser than 700px and more than 200px*/
@@ -527,12 +491,13 @@ input {
     border-top: 1px solid cyan;
   }
 }
+/*
 
 #content-container::after{
-  content: " "; /* to clear the logo and nav elements */
+  content: " ";  to clear the logo and nav elements
   clear: both;
   display: block;
-  visibility: none; /* if used any other character than space in content */
+  visibility: none; if used any other character than space in content 
 }
 
     /*text-align: justify;*/
@@ -594,7 +559,7 @@ div.specification{
   height: 350px;
   color: white;
   text-shadow: #444 0 5px 5px;
-  background:transparent;
+  background: transparent;
   position: absolute;
   top: 0;
   left: 0;
@@ -639,7 +604,7 @@ strong{
   }
 }
 
-.collapse{
+.fixed .collapse{
   padding: 10%;
 }
 
