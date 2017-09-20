@@ -433,12 +433,30 @@ input {
   position: absolute;
   top: 80%;
   left: 50%;
-  -ms-transform: translate(-50%,0);
-  transform: translate(-50%,0);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
   margin: auto;
   z-index: 10;
 }
 
+#hide-category{
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background: black;
+    text-align: center;
+    a{
+      padding-left: 20px;
+      padding-right: 20px;
+      color: white;
+      font: bold 1em helvetica;
+      &:hover{
+        text-decoration: none;
+        color: silver;
+      }
+    }
+}
 
 /*If screen lesser than 700px and more than 200px*/
 @media screen and (max-width: 992px) and (min-width: 300px){
@@ -674,3 +692,4 @@ strong{
 ul.users{
   list-style: none;
 }
+

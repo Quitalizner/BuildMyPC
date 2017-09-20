@@ -31,9 +31,21 @@
   </div>
   <div class="row">
     <div class="home-image"><%= image_tag("homedecoredited.jpg", alt: "Graphic Image")%>
-        <p class="inner-text">Or if you chose to go pick among the Categories</p>
-        <a href="#" class="btn btn-default inner-button">Categories</a>
-    </div>
+        <p class="inner-text">Or if you chose to pick among the Categories</p>
+        <a class="btn btn-default inner-button" type="button" data-toggle="collapse" data-target="#hide-category">Categories</a>
+        <div id="hide-category" class="collapse">
+			<a href="<%=product_type_path(1)%>">Ram</a>
+			<a href="<%=product_type_path(1)%>">Graphic Card</a>
+			<a href="<%=product_type_path(1)%>">Mother Board</a>
+			<a href="<%=product_type_path(1)%>">CPU</a>
+			<a href="<%=product_type_path(1)%>">Cabinet</a>
+			<a href="<%=product_type_path(1)%>">Pre-Built</a>
+			<a href="<%=product_type_path(1)%>">Sound Card</a>
+			<a href="<%=product_type_path(1)%>">Hard Disk</a>
+			<a href="<%=product_type_path(1)%>">Hard Disk</a>
+			<a href="<%=product_type_path(1)%>">Hard Disk</a>
+			<a href="<%=product_type_path(1)%>">Hard Disk</a>
+  	    </div>
+	</div>
   </div>
-</div>
 </div>
