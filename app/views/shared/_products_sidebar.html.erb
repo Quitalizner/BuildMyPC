@@ -12,9 +12,9 @@
 						<% end %>
 						</li>	
 				<% end %>
+				<h5><%= link_to "ALL PRODUCTS", products_path %></h5>
 				<% if logged_in? && current_user.admin? %>
-					<h4><%= link_to "Products List", products_path %></h4> 
-					<h4><%= link_to "Add Type", new_product_type_path %></h4><!-- All types of products listed for admin's ease -->
+					<h5><%= link_to "ADD TYPE", new_product_type_path %></h5><!-- All types of products listed for admin's ease -->
 				<% end %>			
 			</div>
 		</div>
