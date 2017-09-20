@@ -29,6 +29,7 @@ $light-neon: #cccccc;
     font-variant: small-caps;
   }
 }
+
 /* header*/
 
 #logo{
@@ -395,6 +396,10 @@ input {
   padding-bottom: 50px;
 }
 
+.display-image img{
+  width: 100%;  
+}
+
 .home-image{
   position: relative;
   width: 60%;
@@ -532,6 +537,10 @@ input {
     }
   }
 
+  .container{
+    padding: 0%;
+  }
+
   .inner-text{
   font-size: 1.2em;
   }
@@ -621,8 +630,17 @@ strong{
 }
  
 .pagination{
-    width: 100%;
-    padding: 0% 25%;
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  margin: 20px auto;
+}
+
+.remove-padding{
+  margin-top: 30px;
+  .col-md-6, .col-xs-12{
+    padding: 0%;
+  }
 }
 
 #border-show{

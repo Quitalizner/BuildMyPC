@@ -3,10 +3,10 @@
 </div>
 
 <div class="container-fluid">
-	<div class="row">
+	<div class="row remove-padding" >
 		<% @products.each do |product| %>
 			<div class="col-md-6 col-xs-12" id="border-show">
-				<div class="col-md-8 col-xs-12">
+				<div class="col-md-8 col-xs-12 display-image">
 					<%= image_tag(product.image.url(:standard)) %>
 					<% if logged_in? %>
 						<linc><%= link_to 'Edit', edit_product_path(product, val: yield(:val)) %></linc>

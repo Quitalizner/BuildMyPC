@@ -21,18 +21,18 @@
 	</div>
 </div>
 
-<div class="separator"></div>
+<div class="separator" id="Link-to-last"></div>
 <div class="container-fluid" id="home-container">
-  <div class="row">
+  <div class="row" >
     <div class="home-image"><%= image_tag("homedecoredited.jpg", alt: "Graphic Image")%>
         <p class="inner-text">Get started by browsing thorugh the list of Products we have to offer</p>
-        <a href="#Link-to-last" class="btn btn-default inner-button" onClick="window.location='<%=products_path%>';">Products</a>
+        <a href="<%=products_path%>" class="btn btn-default inner-button">Products</a>
     </div>
   </div>
   <div class="row">
     <div class="home-image"><%= image_tag("homedecoredited.jpg", alt: "Graphic Image")%>
         <p class="inner-text">Or if you chose to go pick among the Categories</p>
-        <a href="#Link-to-last" class="btn btn-default inner-button">Categories</a>
+        <a href="#" class="btn btn-default inner-button">Categories</a>
     </div>
   </div>
 </div>
