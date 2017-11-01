@@ -16,10 +16,10 @@ using Rbenv
 Deployed using Heroku
 
 Steps to deploy-
-*heroku login
-*heroku keys:add
-*heroku create
-*git push heroku master
+* heroku login
+* heroku keys:add
+* heroku create
+* git push heroku master
 
 
 ## Built With
