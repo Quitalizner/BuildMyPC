@@ -4,13 +4,13 @@ BuildMyPC is a database-driver dynamic website created using Ruby on Rails frame
 The admin has special access to editing the information of products and adding more products among other capabilities, whereas a user has only viewing privileges as of now.
 
 ## Prerequisites
-*OS - Ubuntu 16.04 (virtual machine)
-*Text editor used - Sublime Text 3
+* OS - Ubuntu 16.04 (virtual machine)
+* Text editor used - Sublime Text 3
 
 ## Installing
-*Rails version - 5.1.2
+* Rails version - 5.1.2
 Follow Details on https://gorails.com/setup/ubuntu 
-using Rbenv
+Using Rbenv
 
 ## Deployment
 Deployed using Heroku
