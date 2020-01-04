@@ -35,7 +35,7 @@ Steps to deploy-
 
 * Hats off to members of stackoverflow for clearing my doubts. 
 * Thank you Mr.Anirudh for introducing me to ruby on rails.
-* Thank you Michael Hartl for his crystal clear tutorials in railstutorial.org
+* Thank you Michael Hartl for your crystal clear tutorials in railstutorial.org
 
 ## Future Upgrades
 
